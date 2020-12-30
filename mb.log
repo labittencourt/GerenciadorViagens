@@ -1,0 +1,12 @@
+{"message":"[mb:2525] mountebank v2.3.3 now taking orders - point your browser to http://localhost:2525/ for help","level":"info","timestamp":"2020-12-20T14:41:22.689Z"}
+{"message":"[mb:2525] PUT /imposters","level":"info","timestamp":"2020-12-20T14:41:22.705Z"}
+{"message":"[http:4545] Open for business...","level":"info","timestamp":"2020-12-20T14:41:22.728Z"}
+{"message":"[http:4545] ::1:55567 => GET /api/v1/viagens/1","level":"info","timestamp":"2020-12-20T14:41:27.492Z"}
+{"message":"[http:4545] ::1:55569 => GET /api/v1/viagens/1","level":"info","timestamp":"2020-12-20T14:41:28.853Z"}
+{"message":"[http:4545] ::1:55572 => GET /api/v1/viagens/1","level":"info","timestamp":"2020-12-20T14:41:29.868Z"}
+{"message":"[http:4545] ::1:55574 => GET /api/v1/viagens/1","level":"info","timestamp":"2020-12-20T14:41:30.908Z"}
+{"message":"[http:4545] ::1:55576 => GET /api/v1/viagens/12","level":"info","timestamp":"2020-12-20T14:41:34.743Z"}
+{"message":"[http:4545] ::1:55578 => GET /api/v1/viagens/12","level":"info","timestamp":"2020-12-20T14:41:35.829Z"}
+{"message":"[http:4545] ::1:55581 => GET /api/v1/viagens/122","level":"info","timestamp":"2020-12-20T14:41:38.250Z"}
+{"message":"[http:4545] ::1:55583 => GET /api/v1/viagens/122","level":"info","timestamp":"2020-12-20T14:41:39.085Z"}
+{"message":"[mb:2525] Adios - see you soon?","level":"info","timestamp":"2020-12-21T13:13:57.913Z"}

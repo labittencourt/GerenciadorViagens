@@ -1,0 +1,87 @@
+{
+  "port": "4545",
+  "protocol": "http",
+  "stubs": [
+    {
+      "responses": [
+        {
+          "is": {
+            "statusCode": 200,
+            "body": "{\n    \"data\": {\n        \"id\": 2,\n        \"localDeDestino\": \"Santa Catarina1244\",\n        \"dataPartida\": \"2021-01-12\",\n        \"dataRetorno\": \"2021-02-01\",\n        \"acompanhante\": \"Leandro\",\n        \"regiao\": \"Sul\"\n    },\n    \"errors\": []\n}"
+          }
+        },
+        {
+          "is": {
+            "statusCode": 500,
+            "body": "\"mensagem\": \"Servidor off\""
+          }
+        }
+      ],
+      "predicates": [
+        {
+          "and": [
+            {
+              "equals": {
+                "method": "POST"
+              }
+            },
+            {
+              "equals": {
+                "path": "api/v1/viagens"
+              }
+            },
+            {
+              "equals": {
+                "body": "{\n  \"acompanhante\": \"Leandro\",\n  \"dataPartida\": \"2021-01-12\",\n  \"dataRetorno\": \"2021-02-01\",\n  \"localDeDestino\": \"Santa Catarina123\",\n  \"regiao\": \"Sul\"\n}"
+              }
+            },
+            {
+              "equals": {
+                "headers": {
+                  "Content-Type": "application/json"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "responses": [
+        {
+          "is": {
+            "statusCode": 404,
+            "body": "{\n  \"data\": null,\n  \"errors\": [\n    \"Viagem com id: [2] não encontrada\"\n  ]\n}"
+          }
+        },
+        {
+          "is": {
+            "statusCode": 200,
+            "body": "{\n  \"data\": {\n    \"id\": 1,\n    \"localDeDestino\": \"Uberlandia\",\n    \"dataPartida\": \"2020-12-20\",\n    \"dataRetorno\": \"2020-12-20\",\n    \"acompanhante\": \"Manuela\",\n    \"regiao\": \"Sudeste\",\n    \"temperatura\": 10.67\n  },\n  \"errors\": []\n}"
+          }
+        }
+      ],
+      "predicates": [
+        {
+          "and": [
+            {
+              "equals": {
+                "method": "GET"
+              }
+            },
+            {
+              "equals": {
+                "path": "/api/v1/viagens/1"
+              }
+            },
+            {
+              "equals": {
+                "body": "{\n  \"data\": {\n    \"id\": 1,\n    \"localDeDestino\": \"Uberlandia\",\n    \"dataPartida\": \"2020-12-20\",\n    \"dataRetorno\": \"2020-12-20\",\n    \"acompanhante\": \"Manuela\",\n    \"regiao\": \"Sudeste\",\n    \"temperatura\": 44.99\n  },\n  \"errors\": []\n}"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
