@@ -31,7 +31,7 @@ public class ViagemDtoResponse implements Serializable {
     @ApiModelProperty(value = "Nome do acompanhante da viagem")
     private String acompanhante;
 
-    @ApiModelProperty(value = "Região de destino da viagem [Norte, Sul, Leste, Oeste]")
+    @ApiModelProperty(value = "Região de destino da viagem", allowableValues = "Norte, Sul, Leste, Oeste")
     private String regiao;
 
     @ApiModelProperty(value = "Temperatura prevista da região de destino")

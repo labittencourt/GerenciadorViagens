@@ -1,0 +1,63 @@
+{
+   "port":"4545",
+   "protocol":"http",
+   "stubs":[
+      {
+         "responses":[
+            {
+               "is":{
+                  "statusCode":201,
+                  "body":{
+                     "data":{
+                        "id":12,
+                        "localDeDestino":"Santa Catarina123",
+                        "dataPartida":"2021-01-12",
+                        "dataRetorno":"2021-02-01",
+                        "acompanhante":"Leandro",
+                        "regiao":"Sul",
+                        "temperatura": -1
+                     },
+                     "errors":[
+
+                     ]
+                  }
+               }
+            }
+         ],
+         "predicates":[
+            {
+               "and":[
+                  {
+                     "equals":{
+                        "method":"POST"
+                     }
+                  },
+                  {
+                     "equals":{
+                        "path":"/api/v1/viagens"
+                     }
+                  },
+                  {
+                     "equals":{
+                        "body":{
+                           "acompanhante":"Leandro",
+                           "dataPartida":"2021-01-12",
+                           "dataRetorno":"2021-02-01",
+                           "localDeDestino":"Santa Catarina123",
+                           "regiao":"Sul"
+                        }
+                     }
+                  },
+                  {
+                     "equals":{
+                        "headers":{
+                           "Content-Type":"application/json"
+                        }
+                     }
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+}
