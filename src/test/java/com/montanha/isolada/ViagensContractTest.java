@@ -4,6 +4,9 @@ import com.montanha.factory.DadosViagemDataFactory;
 import com.montanha.factory.UsuarioDataFactory;
 import com.montanha.pojo.Usuario;
 import com.montanha.pojo.ViagemCadastrada;
+import io.qameta.allure.Description;
+import io.qameta.allure.Flaky;
+import io.qameta.allure.junit4.DisplayName;
 import io.restassured.http.ContentType;
 import org.junit.Before;
 import org.junit.Test;
@@ -40,6 +43,10 @@ public class ViagensContractTest {
     }
 
     @Test
+    @DisplayName("Nome do teste")
+    @Description("descriçao do teste")
+    @Flaky
+
     public void testValidarContratoCadastroViagem() throws IOException {
         ViagemCadastrada dadosViagem = DadosViagemDataFactory.criarViagem();
 
@@ -52,7 +59,7 @@ public class ViagensContractTest {
         .then()
             .log().all()
             .assertThat()
-                .statusCode(201)
+                .statusCode(200)
                 .body(matchesJsonSchemaInClasspath("schemas/postV1ViagensViagemCadastrada.json"));
     }
 }

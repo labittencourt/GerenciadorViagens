@@ -5,17 +5,22 @@ import com.montanha.factory.DadosViagemDataFactory;
 import com.montanha.factory.UsuarioDataFactory;
 import com.montanha.pojo.Usuario;
 import com.montanha.pojo.ViagemCadastrada;
+import io.qameta.allure.*;
+import io.qameta.allure.junit4.DisplayName;
 import io.restassured.http.ContentType;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.Before;
 import org.junit.Test;
+//import io.cucumber.java.pt.*;
+//import org.junit.jupiter.api.DisplayName;
+
 
 import java.io.IOException;
-import static io.restassured.module.jsv.JsonSchemaValidator.*;
 import static io.restassured.RestAssured.*;
-import static io.restassured.matcher.RestAssuredMatchers.*;
 import static org.hamcrest.Matchers.*;
 
+@Epic("Classificacao testes")
+@Feature("Cadastro e Pesquisa de Viagens")
 public class ViagensTest {
     private String token;
     private String tokenUsuario;
@@ -60,6 +65,10 @@ public class ViagensTest {
     }
 
     @Test
+    @DisplayName("Realizar um cadastro com sucesso na regiao sul")
+    @Description("Testes da tag descrição")
+//    @Severity(SeverityLevel.NORMAL)
+//    @Story("Realizar cenario de teste usando user valido")
     public void testRealizarUmCadastroComSucessoNaRegiaoSul() throws IOException {
         ViagemCadastrada dadosViagem = DadosViagemDataFactory.criarViagemCadastradaValidaRegiaoSul();
 
@@ -78,6 +87,11 @@ public class ViagensTest {
     }
 
     @Test
+    @DisplayName("Fazendo login com um usuario invalido")
+//    @Dado("que faco login com user invalido")
+    @Severity(SeverityLevel.CRITICAL)
+    @Step("Login com user {0} and pass {1}")
+    @Story("Realizar cenario de teste usando user invalido")
     public void testRealizarUmCadastroComSucessoNaRegiaoNorte() throws IOException {
         ViagemCadastrada dadosViagem = DadosViagemDataFactory.criarViagemCadastradaValidaRegiaoNorte();
 
@@ -143,31 +157,31 @@ public class ViagensTest {
                 .body("data.regiao", equalToIgnoringCase("sudeste"));
     }
 
-    @Test
-    public void testRealizarPesquisaDeViagemEValidarATemperaturaMockable() {
-        given()
-                .header("Authorization", tokenUsuario)
-                .when()
-                .get("v1/viagens/1")
-                .then()
-                .log().all()
-                .assertThat()
-                .statusCode(200)
-                .body("data.regiao", equalTo("Sudeste"))
-                .body("data.temperatura", equalTo(44.99f));
-    }
-
-    @Test
-    public void testRealizarPesquisaDeViagemUtilizandoMounteBank() {
-        given()
-                .header("Authorization", tokenUsuario)
-                .when()
-                .get("v1/viagens/12")
-                .then()
-                .log().all()
-                .assertThat()
-                .statusCode(200);
+//    @Test
+//    public void testRealizarPesquisaDeViagemEValidarATemperaturaMockable() {
+//        given()
+//                .header("Authorization", tokenUsuario)
+//                .when()
+//                .get("v1/viagens/1")
+//                .then()
+//                .log().all()
+//                .assertThat()
+//                .statusCode(200)
 //                .body("data.regiao", equalTo("Sudeste"))
 //                .body("data.temperatura", equalTo(44.99f));
-    }
+//    }
+
+//    @Test
+//    public void testRealizarPesquisaDeViagemUtilizandoMounteBank() {
+//        given()
+//                .header("Authorization", tokenUsuario)
+//                .when()
+//                .get("v1/viagens/12")
+//                .then()
+//                .log().all()
+//                .assertThat()
+//                .statusCode(200);
+////                .body("data.regiao", equalTo("Sudeste"))
+////                .body("data.temperatura", equalTo(44.99f));
+//    }
 }
