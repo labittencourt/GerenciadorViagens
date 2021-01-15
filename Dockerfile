@@ -1,22 +1,11 @@
-FROM ubuntu:18.04
+FROM maven:3.6.3-jdk-8
 
-RUN apt-get update
+WORKDIR "/usr/src/app"
 
-COPY . /data/gerenciador-viagens
-WORKDIR /data/gerenciador-viagens
+COPY "$pwd" "/usr/src/app"
 
-RUN chmod +x /data/gerenciador-viagens/start-app.sh
-RUN ls -la /data/gerenciador-viagens
-
-RUN apt-get install curl -y
-RUN apt-get install software-properties-common -y
-RUN add-apt-repository ppa:webupd8team/java
-RUN echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | debconf-set-selections
-RUN apt-get install oracle-java8-installer -y
-RUN apt-get install maven -y
+RUN mvn clean install -Dmaven.test.skip=true
 
 EXPOSE 8089
 
-RUN ls -la /data/gerenciador-viagens
-
-CMD [ "bash", "/data/gerenciador-viagens/start-app.sh" ]
+CMD [ "mvn", "spring-boot:run" ]
