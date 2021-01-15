@@ -1,0 +1,24 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "1 expectation failed.\nExpected status code <200> but was <201>.\n",
+      "children" : [ {
+        "name" : "testValidarContratoCadastroViagem",
+        "uid" : "e1c972ee4d36c24d",
+        "parentUid" : "6f6e07e4bff092f0363f60ce21568c1c",
+        "status" : "failed",
+        "time" : {
+          "duration" : 7089
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "6f6e07e4bff092f0363f60ce21568c1c"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ],
+  "name" : "categories"
+}

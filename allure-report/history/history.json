@@ -1,0 +1,105 @@
+{
+  "com.montanha.isolada.ViagensTest:com.montanha.isolada.ViagensTest#testRealizarUmCadastroComSucessoNaRegiaoNorte" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "42851b7f27449e79",
+      "status" : "passed",
+      "time" : {
+        "duration" : 577
+      }
+    } ]
+  },
+  "com.montanha.isolada.ViagensContractTest:com.montanha.isolada.ViagensContractTest#testValidarContratoCadastroViagem" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "e1c972ee4d36c24d",
+      "status" : "failed",
+      "statusDetails" : "1 expectation failed.\nExpected status code <200> but was <201>.\n",
+      "time" : {
+        "duration" : 7089
+      }
+    } ]
+  },
+  "com.montanha.isolada.ViagensTest:com.montanha.isolada.ViagensTest#testRealizarPesquisaDeUmaViagemCadastradaEReceberCode200" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "3bc28db5d2c1bcf",
+      "status" : "passed",
+      "time" : {
+        "duration" : 536
+      }
+    } ]
+  },
+  "com.montanha.isolada.ViagensTest:com.montanha.isolada.ViagensTest#testRealizarUmCadastroComSucessoNaRegiaoSul" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "a13c451d24f1e47",
+      "status" : "passed",
+      "time" : {
+        "duration" : 364
+      }
+    } ]
+  },
+  "com.montanha.isolada.ViagensTest:com.montanha.isolada.ViagensTest#testRealizarUmCadastroComSucessoNaRegiaoSudeste" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "8aca4fa0b636fdc1",
+      "status" : "passed",
+      "time" : {
+        "duration" : 352
+      }
+    } ]
+  },
+  "com.montanha.isolada.ViagensTest:com.montanha.isolada.ViagensTest#testRealizarUmCadastroDeViagemSemLocalDeDestino" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "478edc07070cda3a",
+      "status" : "passed",
+      "time" : {
+        "duration" : 371
+      }
+    } ]
+  }
+}

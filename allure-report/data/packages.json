@@ -1,0 +1,83 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "children" : [ {
+    "name" : "com.montanha.isolada",
+    "children" : [ {
+      "name" : "ViagensTest",
+      "children" : [ {
+        "name" : "testRealizarUmCadastroComSucessoNaRegiaoNorte",
+        "uid" : "42851b7f27449e79",
+        "parentUid" : "c7ba65b11503d840293357a7d78d71f0",
+        "status" : "passed",
+        "time" : {
+          "duration" : 577
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "testRealizarUmCadastroDeViagemSemLocalDeDestino",
+        "uid" : "478edc07070cda3a",
+        "parentUid" : "c7ba65b11503d840293357a7d78d71f0",
+        "status" : "passed",
+        "time" : {
+          "duration" : 371
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "testRealizarPesquisaDeUmaViagemCadastradaEReceberCode200",
+        "uid" : "3bc28db5d2c1bcf",
+        "parentUid" : "c7ba65b11503d840293357a7d78d71f0",
+        "status" : "passed",
+        "time" : {
+          "duration" : 536
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "testRealizarUmCadastroComSucessoNaRegiaoSudeste",
+        "uid" : "8aca4fa0b636fdc1",
+        "parentUid" : "c7ba65b11503d840293357a7d78d71f0",
+        "status" : "passed",
+        "time" : {
+          "duration" : 352
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "testRealizarUmCadastroComSucessoNaRegiaoSul",
+        "uid" : "a13c451d24f1e47",
+        "parentUid" : "c7ba65b11503d840293357a7d78d71f0",
+        "status" : "passed",
+        "time" : {
+          "duration" : 364
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "c7ba65b11503d840293357a7d78d71f0"
+    }, {
+      "name" : "ViagensContractTest",
+      "children" : [ {
+        "name" : "testValidarContratoCadastroViagem",
+        "uid" : "e1c972ee4d36c24d",
+        "parentUid" : "c0a577a7fe4ef6d36d8358b43bdca9f3",
+        "status" : "failed",
+        "time" : {
+          "duration" : 7089
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "c0a577a7fe4ef6d36d8358b43bdca9f3"
+    } ],
+    "uid" : "com.montanha.isolada"
+  } ],
+  "name" : "packages"
+}
