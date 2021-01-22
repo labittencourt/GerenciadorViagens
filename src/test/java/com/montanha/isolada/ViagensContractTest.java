@@ -43,8 +43,8 @@ public class ViagensContractTest {
     }
 
     @Test
-    @DisplayName("Nome do teste")
-    @Description("descriçao do teste")
+    @DisplayName("Validar o contrato da api ")
+    @Description("Status code 200 para validar o contrato da api cadastro viagem")
     @Flaky
 
     public void testValidarContratoCadastroViagem() throws IOException {
