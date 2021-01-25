@@ -4,6 +4,8 @@ import com.montanha.factory.DadosViagemDataFactory;
 import com.montanha.factory.UsuarioDataFactory;
 import com.montanha.pojo.Usuario;
 import com.montanha.pojo.ViagemCadastrada;
+import io.qameta.allure.*;
+import io.qameta.allure.junit4.DisplayName;
 import io.restassured.http.ContentType;
 import org.junit.Before;
 import org.junit.Test;
@@ -14,6 +16,8 @@ import static io.restassured.RestAssured.*;
 import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.*;
 
+@Epic("Contrato Teste")
+@Feature("Testar contrato da api")
 public class ViagensContractTest {
     private String token;
 
@@ -40,6 +44,10 @@ public class ViagensContractTest {
     }
 
     @Test
+    @DisplayName("Validar o contrato da api ")
+    @Description("Status code 201 para validar o contrato da api cadastro viagem")
+    @Flaky
+    @Severity(SeverityLevel.CRITICAL)
     public void testValidarContratoCadastroViagem() throws IOException {
         ViagemCadastrada dadosViagem = DadosViagemDataFactory.criarViagem();
 
@@ -52,7 +60,7 @@ public class ViagensContractTest {
         .then()
             .log().all()
             .assertThat()
-                .statusCode(201)
+                .statusCode(200)
                 .body(matchesJsonSchemaInClasspath("schemas/postV1ViagensViagemCadastrada.json"));
     }
 }

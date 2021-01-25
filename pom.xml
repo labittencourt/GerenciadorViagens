@@ -19,6 +19,7 @@
 	</parent>
 
 	<properties>
+		<aspectj.version>1.8.10</aspectj.version>
 		<rest-assured.version>4.3.0</rest-assured.version>
 		<groovy.version>3.0.2</groovy.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -107,8 +108,20 @@
 			<artifactId>owner</artifactId>
 			<version>1.0.12</version>
 		</dependency>
-
-
+<!--		 https://mvnrepository.com/artifact/io.qameta.allure/allure-rest-assured-->
+<!--		fora por enquanto-->
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-rest-assured</artifactId>
+			<version>2.13.8</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-junit4 -->
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-junit4</artifactId>
+			<version>2.13.8</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 	
 
@@ -118,6 +131,33 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.22.2</version>
+				<configuration>
+					<testFailureIgnore>false</testFailureIgnore>
+					<argLine>
+						-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+					</argLine>
+					<properties>
+						<property>
+							<name>listener</name>
+							<value>io.qameta.allure.junit4.AllureJunit4</value>
+						</property>
+					</properties>
+				</configuration>
+				<dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjweaver</artifactId>
+                        <version>${aspectj.version}</version>
+                    </dependency>
+				</dependencies>
+			</plugin>
+
 		</plugins>
+
 	</build>
 </project>
