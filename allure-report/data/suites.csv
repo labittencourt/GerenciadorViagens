@@ -1,7 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","","","577","","com.montanha.isolada.ViagensTest","","com.montanha.isolada.ViagensTest","","testRealizarUmCadastroComSucessoNaRegiaoNorte",""
-"passed","","","371","","com.montanha.isolada.ViagensTest","","com.montanha.isolada.ViagensTest","","testRealizarUmCadastroDeViagemSemLocalDeDestino",""
-"passed","","","536","","com.montanha.isolada.ViagensTest","","com.montanha.isolada.ViagensTest","","testRealizarPesquisaDeUmaViagemCadastradaEReceberCode200",""
-"passed","","","352","","com.montanha.isolada.ViagensTest","","com.montanha.isolada.ViagensTest","","testRealizarUmCadastroComSucessoNaRegiaoSudeste",""
-"failed","","","7089","","com.montanha.isolada.ViagensContractTest","","com.montanha.isolada.ViagensContractTest","","testValidarContratoCadastroViagem",""
-"passed","","","364","","com.montanha.isolada.ViagensTest","","com.montanha.isolada.ViagensTest","","testRealizarUmCadastroComSucessoNaRegiaoSul",""

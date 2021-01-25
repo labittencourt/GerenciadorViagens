@@ -8,11 +8,11 @@ mvn spring-boot:run
 
 --------------
 # Para rodar os testes no terminal digite:
-mvn surefire:test
+mvn clean test
 
 --------------
 # Para gerar o relatório de testes com allure digite no terminal:
-allure serve <caminho da pasta surefire-reports> 
-## esta pasta é gerada após rodar o comando mvn surefire:test e fica normalmente "target/surefire-reports"
+\
+allure serve 
 --------------
  

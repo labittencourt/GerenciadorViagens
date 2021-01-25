@@ -11,15 +11,13 @@ import io.restassured.http.ContentType;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.Before;
 import org.junit.Test;
-//import io.cucumber.java.pt.*;
-//import org.junit.jupiter.api.DisplayName;
 
 
 import java.io.IOException;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
-@Epic("Classificacao testes")
+@Epic("Viagens Testes")
 @Feature("Cadastro e Pesquisa de Viagens")
 public class ViagensTest {
     private String token;
@@ -67,8 +65,8 @@ public class ViagensTest {
     @Test
     @DisplayName("Realizar um cadastro com sucesso na regiao sul")
     @Description("Testes da tag descrição")
-//    @Severity(SeverityLevel.NORMAL)
-//    @Story("Realizar cenario de teste usando user valido")
+    @Severity(SeverityLevel.NORMAL)
+    @Story("Cenario - Cadastro viagem validando acompanhante e regiao Sul - status code = 201")
     public void testRealizarUmCadastroComSucessoNaRegiaoSul() throws IOException {
         ViagemCadastrada dadosViagem = DadosViagemDataFactory.criarViagemCadastradaValidaRegiaoSul();
 
@@ -88,10 +86,9 @@ public class ViagensTest {
 
     @Test
     @DisplayName("Fazendo login com um usuario invalido")
-//    @Dado("que faco login com user invalido")
-    @Severity(SeverityLevel.CRITICAL)
+    @Severity(SeverityLevel.NORMAL)
     @Step("Login com user {0} and pass {1}")
-    @Story("Realizar cenario de teste usando user invalido")
+    @Story("Cenario - Cadastro viagem validando acompanhante e regiao Norte - status code = 201")
     public void testRealizarUmCadastroComSucessoNaRegiaoNorte() throws IOException {
         ViagemCadastrada dadosViagem = DadosViagemDataFactory.criarViagemCadastradaValidaRegiaoNorte();
 
@@ -110,6 +107,11 @@ public class ViagensTest {
     }
 
     @Test
+    @Step("step do teste regiao sudeste")
+    @DisplayName("Criando um cadastro para regiao sudeste, validando dois parametros obrigatorios")
+    @Description("Validando os parametros acompanhante e regiao no response body")
+    @Story("Cenario - Cadastro viagem validando acompanhante e regiao Sudeste - status code = 201")
+    @Severity(SeverityLevel.TRIVIAL)
     public void testRealizarUmCadastroComSucessoNaRegiaoSudeste() throws IOException {
         ViagemCadastrada dadosViagem = DadosViagemDataFactory.criarViagemCadastradaValidaRegiaoSudeste();
 
@@ -128,6 +130,10 @@ public class ViagensTest {
     }
 
     @Test
+    @Step("Dado que realizo cadastro // Quando nao informo campo obrigatorio // Entao recebo status code = 400")
+    @DisplayName("Realizar Cadastro de uma viagem sem Local de destino")
+    @Description("O teste deve ter o status = 400 porque não possui parametro obrigatório")
+    @Story("Cenario - Cadastro viagem nao passando passando obrigatorio - status code = 400")
     public void testRealizarUmCadastroDeViagemSemLocalDeDestino() throws IOException {
         ViagemCadastrada dadosViagem = DadosViagemDataFactory.criarViagemSemLocalDeDestino();
 
@@ -144,6 +150,8 @@ public class ViagensTest {
     }
 
     @Test
+    @DisplayName("Pesquisar uma viagem que contem região = Sudeste")
+    @Story("Cenario - Pesquisar viagem regiao sudeste - status code = 200")
     public void testRealizarPesquisaDeUmaViagemCadastradaEReceberCode200() {
         given()
             .header("Authorization", tokenUsuario)
