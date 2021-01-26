@@ -10,7 +10,7 @@ target/
 .springBeans
 
 ### IntelliJ IDEA ###
-.idea
+.idea/
 *.iws
 *.iml
 *.ipr
@@ -25,3 +25,7 @@ nbdist/
 
 ### mac ###
 .DS_Store
+
+# Maven
+log/
+target/
