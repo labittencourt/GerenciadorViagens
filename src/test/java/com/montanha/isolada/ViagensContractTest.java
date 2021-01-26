@@ -37,15 +37,13 @@ public class ViagensContractTest {
             .post("v1/auth")
         .then()
             .log().all()
-            .assertThat()
-                .statusCode(200)
             .extract()
                 .path("data.token");
     }
 
     @Test
     @DisplayName("Validar o contrato da api ")
-    @Description("Status code 201 para validar o contrato da api cadastro viagem")
+    @Description("Teste para validar o contrato da api validando se houve alguma alteracao no seu corpo da resposta")
     @Flaky
     @Severity(SeverityLevel.CRITICAL)
     public void testValidarContratoCadastroViagem() throws IOException {
